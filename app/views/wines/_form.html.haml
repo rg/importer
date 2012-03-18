@@ -11,10 +11,10 @@
     = f.text_field :name
   .field
     = f.label :vintage
-    = f.number_field :vintage
+    = select("wine", "vintage", @vintages)
   .field
     = f.label :producer
-    = f.text_field :producer
+    = collection_select(:wine, :producer_id, Producer.all, :id, :name) 
   .field
     = f.label :appellation
     = f.text_field :appellation
