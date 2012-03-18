@@ -1,0 +1,21 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @wine.name
+%p
+  %b Vintage:
+  = @wine.vintage
+%p
+  %b Producer:
+  = @wine.producer
+%p
+  %b Appellation:
+  = @wine.appellation
+%p
+  %b Notes:
+  = @wine.notes
+
+= link_to 'Edit', edit_wine_path(@wine)
+\|
+= link_to 'Back', wines_path

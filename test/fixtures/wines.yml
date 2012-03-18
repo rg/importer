@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  vintage: 1
+  producer: 
+  appellation: MyString
+  notes: MyText
+
+two:
+  name: MyString
+  vintage: 1
+  producer: 
+  appellation: MyString
+  notes: MyText
