@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  wine: 
+  bottle_size: MyString
+  warehouse_location: MyString
+
+two:
+  wine: 
+  bottle_size: MyString
+  warehouse_location: MyString

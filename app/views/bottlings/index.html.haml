@@ -1,0 +1,25 @@
+%h1 Listing bottlings
+
+= link_to 'New Bottling', new_bottling_path
+%br
+%br
+
+%table
+  %tr
+    %th SKU
+    %th Wine
+    %th Bottle size
+    %th Warehouse location
+    %th
+    %th
+    %th
+
+  - @bottlings.each do |bottling|
+    %tr
+      %td= bottling.sku
+      %td= bottling.wine.name
+      %td= bottling.bottle_size
+      %td= bottling.warehouse_location
+      %td= link_to 'Show', bottling
+      %td= link_to 'Edit', edit_bottling_path(bottling)
+      %td= link_to 'Destroy', bottling, :confirm => 'Are you sure?', :method => :delete

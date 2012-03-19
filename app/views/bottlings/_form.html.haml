@@ -1,0 +1,21 @@
+= form_for @bottling do |f|
+  -if @bottling.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@bottling.errors.count, "error")} prohibited this bottling from being saved:"
+      %ul
+        - @bottling.errors.full_messages.each do |msg|
+          %li= msg
+  .field
+    %label{ :for => "bottling_sku" } SKU
+    = f.text_field :sku
+  .field
+    = f.label :wine
+    = collection_select(:bottling, :wine_id, Wine.all, :id, :full_name)
+  .field
+    = f.label :bottle_size
+    = select("bottlings", "bottle_size", [ML375, ML500, ML750, ML1500, ML3000])
+  .field
+    = f.label :warehouse_location
+    = f.text_field :warehouse_location
+  .actions
+    = f.submit 'Save'

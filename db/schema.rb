@@ -11,7 +11,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120318003039) do
+ActiveRecord::Schema.define(:version => 20120319025710) do
+
+  create_table "bottlings", :force => true do |t|
+    t.integer  "wine_id"
+    t.string   "bottle_size"
+    t.string   "warehouse_location"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "sku"
+  end
+
+  add_index "bottlings", ["wine_id"], :name => "index_bottlings_on_wine_id"
 
   create_table "producers", :force => true do |t|
     t.string   "name"
@@ -22,6 +33,16 @@ ActiveRecord::Schema.define(:version => 20120318003039) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "skus", :force => true do |t|
+    t.integer  "wine_id"
+    t.string   "bottle_size"
+    t.string   "warehouse_location"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "skus", ["wine_id"], :name => "index_skus_on_wine_id"
 
   create_table "wines", :force => true do |t|
     t.string   "name"

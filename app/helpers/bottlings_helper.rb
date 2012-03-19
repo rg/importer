@@ -1,0 +1,2 @@
+module BottlingsHelper
+end

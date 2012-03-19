@@ -1,27 +1,26 @@
-%h1 Listing wines
+%h1 Wines
+
+= link_to 'New Wine', new_wine_path
+%br
+%br
 
 %table
   %tr
-    %th Name
     %th Vintage
+    %th Name
     %th Producer
     %th Appellation
-    %th Notes
     %th
     %th
     %th
 
   - @wines.each do |wine|
     %tr
-      %td= wine.name
       %td= wine.vintage
+      %td= wine.name
       %td= wine.producer.name
       %td= wine.appellation
-      %td= wine.notes
       %td= link_to 'Show', wine
       %td= link_to 'Edit', edit_wine_path(wine)
       %td= link_to 'Destroy', wine, :confirm => 'Are you sure?', :method => :delete
 
-%br
-
-= link_to 'New Wine', new_wine_path

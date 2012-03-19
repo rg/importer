@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Wine:
+  = @bottling.wine
+%p
+  %b Bottle size:
+  = @bottling.bottle_size
+%p
+  %b Warehouse location:
+  = @bottling.warehouse_location
+
+= link_to 'Edit', edit_bottling_path(@bottling)
+\|
+= link_to 'Back', bottlings_path

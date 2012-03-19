@@ -1,4 +1,6 @@
 Importer::Application.routes.draw do
+  resources :bottlings
+
   resources :producers
 
   resources :wines

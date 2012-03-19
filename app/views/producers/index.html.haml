@@ -1,4 +1,8 @@
-%h1 Listing producers
+%h1 Producers
+
+= link_to 'New Producer', new_producer_path
+%br
+%br
 
 %table
   %tr
@@ -6,7 +10,6 @@
     %th Email
     %th Phone
     %th Address
-    %th Notes
     %th
     %th
     %th
@@ -17,11 +20,7 @@
       %td= producer.email
       %td= producer.phone
       %td= producer.address
-      %td= producer.notes
       %td= link_to 'Show', producer
       %td= link_to 'Edit', edit_producer_path(producer)
       %td= link_to 'Destroy', producer, :confirm => 'Are you sure?', :method => :delete
 
-%br
-
-= link_to 'New Producer', new_producer_path

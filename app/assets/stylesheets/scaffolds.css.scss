@@ -20,8 +20,7 @@ a {
   &:visited {
     color: #666; }
   &:hover {
-    color: #fff;
-    background-color: #000; } }
+    color: #333; } }
 
 div {
   &.field, &.actions {
@@ -54,3 +53,68 @@ div {
   ul li {
     font-size: 12px;
     list-style: square; } }
+    
+
+table, td {
+  border               : 1px solid #CCC;
+  border-collapse      : collapse;
+  font                 : small/1.5 "Tahoma", "Bitstream Vera Sans", Verdana, Helvetica, sans-serif;
+}
+table {
+  border                :none;
+  border                :1px solid #CCC;
+}
+thead th, tbody th {
+  background            : #FFF image-url("th_bck.gif") repeat-x;
+  color                 : #666;  
+  padding               : 5px 10px;
+  border-left           : 1px solid #CCC;
+}
+tbody {
+  th {
+    background            : #fafafb;
+    border-top            : 1px solid #CCC;
+    text-align            : left;
+    font-weight           : normal;
+  }
+  tr td {
+    padding               : 2px 9px;
+    color                 : #666;
+  }
+  tr:hover {
+    background            : #FFF image-url("tr_bck.gif") repeat;
+    td {
+      color                 : #454545;
+    }
+  }
+}
+tfoot {
+  td, th {
+    border-left           : none;
+    border-top            : 1px solid #CCC;
+    padding               : 4px;
+    background            : #FFF image-url("foot_bck.gif") repeat;
+    color                 : #666;
+  }
+}
+caption {
+  text-align            : left;
+  font-size             : 120%;
+  padding               : 10px 0;
+  color                 : #666;
+}
+table {
+  a:link {
+    color                 : #666;
+  }
+  a:visited {
+    color                 : #666;
+  }
+  a:hover { 
+    color                 : #003366;
+    text-decoration       : none;
+  }
+  a:active {
+    color                 : #003366;
+  }
+}

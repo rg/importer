@@ -1,5 +1,6 @@
 class Wine < ActiveRecord::Base
   belongs_to :producer
+  has_many :bottlings
   
   BACK_VINTAGES = 10
   
@@ -7,6 +8,10 @@ class Wine < ActiveRecord::Base
   validates :vintage,     :presence => true,
                           :numericality => { :only_integer => true }, :if => "vintage != 'N.V.'"
   validates :producer,    :presence => true
+
+  def full_name
+    "#{vintage.to_s} #{self.producer.name} #{name}"
+  end
 
   def quantity_on_hand
     5
