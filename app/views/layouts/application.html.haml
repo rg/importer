@@ -17,8 +17,6 @@
           = link_to "Wines", wines_path
           |
           = link_to "Producers", producers_path
-        - flash.each do |name, msg|
-          = content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String)
       #main{:role => "main"}
         = yield
       %footer
