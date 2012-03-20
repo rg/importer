@@ -65,7 +65,7 @@ table {
   border                :1px solid #CCC;
 }
 thead th, tbody th {
-  background            : #FFF image-url("th_bck.gif") repeat-x;
+  background            : #FFF url("/images/th_bck.gif") repeat-x;
   color                 : #666;  
   padding               : 5px 10px;
   border-left           : 1px solid #CCC;
@@ -82,7 +82,7 @@ tbody {
     color                 : #666;
   }
   tr:hover {
-    background            : #FFF image-url("tr_bck.gif") repeat;
+    background            : #FFF url("/images/tr_bck.gif") repeat;
     td {
       color                 : #454545;
     }
@@ -93,7 +93,7 @@ tfoot {
     border-left           : none;
     border-top            : 1px solid #CCC;
     padding               : 4px;
-    background            : #FFF image-url("foot_bck.gif") repeat;
+    background            : #FFF url("/images/foot_bck.gif") repeat;
     color                 : #666;
   }
 }
