@@ -1,4 +1,6 @@
 Importer::Application.routes.draw do
+  resources :inventory_withdrawals
+
   resources :bottlings
 
   resources :producers

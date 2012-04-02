@@ -1,0 +1,16 @@
+// Place all the styles related to the InventoryWithdrawals controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+span {
+  margin-right: 25px;
+  vertical-align: top;
+}
+div.notes {
+  display: inline-block;
+  vertical-align: top;
+
+  label {
+    vertical-align: top;
+  }
+}

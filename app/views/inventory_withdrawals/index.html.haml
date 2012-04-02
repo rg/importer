@@ -1,0 +1,23 @@
+%h1 Inventory Withdrawals
+
+%table
+  %tr
+    %th Date
+    %th Category
+    %th Notes
+    %th
+    %th
+    %th
+
+  - @inventory_withdrawals.each do |inventory_withdrawal|
+    %tr
+      %td= inventory_withdrawal.date
+      %td= inventory_withdrawal.category
+      %td= inventory_withdrawal.notes
+      %td= link_to 'Show', inventory_withdrawal
+      %td= link_to 'Edit', edit_inventory_withdrawal_path(inventory_withdrawal)
+      %td= link_to 'Destroy', inventory_withdrawal, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Inventory withdrawal', new_inventory_withdrawal_path

@@ -31,15 +31,15 @@ Wine.create(:name        => "Mont Blanc Brut Zero",
 
 Bottling.create(:wine               => Wine.find_by_name("Mineral +"),
                 :sku                => "SKU0000001",
-                :bottle_size        => ML750,
+                :bottle_size        => "750ml",
                 :warehouse_location => "in the back")
 
 Bottling.create(:wine               => Wine.find_by_name("Mineral +"),
                 :sku                => "SKU0000002",
-                :bottle_size        => ML1500,
+                :bottle_size        => "1500ml",
                 :warehouse_location => "over there")
                 
 Bottling.create(:wine               => Wine.find_by_name("Mont Blanc Brut Zero"),
                 :sku                => "SKU0000003",
-                :bottle_size        => ML750,
+                :bottle_size        => "750ml",
                 :warehouse_location => "mkay")                

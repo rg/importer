@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Date:
+  = @inventory_withdrawal.date
+%p
+  %b Category:
+  = @inventory_withdrawal.category
+%p
+  %b Notes:
+  = @inventory_withdrawal.notes
+
+= link_to 'Edit', edit_inventory_withdrawal_path(@inventory_withdrawal)
+\|
+= link_to 'Back', inventory_withdrawals_path

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120319025710) do
+ActiveRecord::Schema.define(:version => 20120402033955) do
 
   create_table "bottlings", :force => true do |t|
     t.integer  "wine_id"
@@ -24,6 +24,25 @@ ActiveRecord::Schema.define(:version => 20120319025710) do
 
   add_index "bottlings", ["wine_id"], :name => "index_bottlings_on_wine_id"
 
+  create_table "inventory_withdrawal_items", :force => true do |t|
+    t.integer  "inventory_withdrawal_id"
+    t.integer  "bottling_id"
+    t.integer  "quantity"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "inventory_withdrawal_items", ["bottling_id"], :name => "index_inventory_withdrawal_items_on_bottling_id"
+  add_index "inventory_withdrawal_items", ["inventory_withdrawal_id"], :name => "index_inventory_withdrawal_items_on_inventory_withdrawal_id"
+
+  create_table "inventory_withdrawals", :force => true do |t|
+    t.date     "date"
+    t.string   "category"
+    t.text     "notes"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "producers", :force => true do |t|
     t.string   "name"
     t.string   "email"
@@ -33,16 +52,6 @@ ActiveRecord::Schema.define(:version => 20120319025710) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  create_table "skus", :force => true do |t|
-    t.integer  "wine_id"
-    t.string   "bottle_size"
-    t.string   "warehouse_location"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "skus", ["wine_id"], :name => "index_skus_on_wine_id"
 
   create_table "wines", :force => true do |t|
     t.string   "name"

@@ -1,0 +1,2 @@
+module InventoryWithdrawalsHelper
+end

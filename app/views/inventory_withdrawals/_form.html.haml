@@ -1,0 +1,26 @@
+= form_for ([@inventory_withdrawal_item, @inventory_withdrawal]) do |f|
+  -if @inventory_withdrawal.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@inventory_withdrawal.errors.count, "error")} prohibited this inventory_withdrawal from being saved:"
+      %ul
+        - @inventory_withdrawal.errors.full_messages.each do |msg|
+          %li= msg
+
+  %span
+    = f.label :date
+    = f.date_select :date
+  %span
+    = f.label :category
+    = select("inventory_withdrawal", "category", InventoryWithdrawal::TYPES)
+  .notes
+    = f.label :notes
+    = f.text_area :notes, :rows => 2
+  %ul  
+    = f.fields_for :inventory_withdrawal_items do |ff|
+      = ff.label :bottling
+      = ff.collection_select(:bottling_id, Bottling.all, :id, :full_name)
+      = ff.label :quantity
+      = ff.text_field :quantity        
+        
+  .actions
+    = f.submit 'Save'
