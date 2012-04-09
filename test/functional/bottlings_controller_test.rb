@@ -17,7 +17,7 @@ class BottlingsControllerTest < ActionController::TestCase
   end
 
   test "should create bottling" do
-    assert_difference('bottling.count') do
+    assert_difference('Bottling.count') do
       post :create, bottling: @bottling.attributes
     end
 
@@ -40,7 +40,7 @@ class BottlingsControllerTest < ActionController::TestCase
   end
 
   test "should destroy bottling" do
-    assert_difference('bottling.count', -1) do
+    assert_difference('Bottling.count', -1) do
       delete :destroy, id: @bottling.to_param
     end
 

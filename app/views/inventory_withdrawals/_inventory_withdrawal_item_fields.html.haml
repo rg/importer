@@ -1,0 +1,5 @@
+= f.label :bottling
+= f.collection_select(:bottling_id, Bottling.all, :id, :full_name)
+= f.label :quantity
+= f.text_field :quantity
+= f.link_to_remove "Remove"

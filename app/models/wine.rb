@@ -4,10 +4,11 @@ class Wine < ActiveRecord::Base
   
   BACK_VINTAGES = 10
   
-  validates :name,        :presence => true
-  validates :vintage,     :presence => true,
-                          :numericality => { :only_integer => true }, :if => "vintage != 'N.V.'"
-  validates :producer,    :presence => true
+  validates :name, :vintage, :producer, :presence => true
+
+  def display_vintage
+    vintage === 0 ? 'N.V.' : vintage.to_s
+  end
 
   def full_name
     "#{vintage.to_s} #{self.producer.name} #{name}"

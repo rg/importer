@@ -3,13 +3,13 @@
 one:
   name: MyString
   vintage: 1
-  producer: 
+  producer: one
   appellation: MyString
   notes: MyText
 
 two:
   name: MyString
   vintage: 1
-  producer: 
+  producer: two
   appellation: MyString
   notes: MyText

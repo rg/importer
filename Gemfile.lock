@@ -1,3 +1,9 @@
+GIT
+  remote: https://github.com/ryanb/nested_form.git
+  revision: 486e0f0e93f3ca455d5d0fc7869053257b6afce2
+  specs:
+    nested_form (0.2.0)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -63,6 +69,7 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.17.2)
+    minitest (2.12.0)
     multi_json (1.1.0)
     pg (0.13.2)
     polyglot (0.3.3)
@@ -127,6 +134,8 @@ DEPENDENCIES
   haml
   haml-rails
   jquery-rails
+  minitest
+  nested_form!
   pg
   rails (= 3.1.0)
   sass-rails (~> 3.1.0)

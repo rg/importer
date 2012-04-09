@@ -1,5 +1,5 @@
 class WinesController < ApplicationController
-  before_filter :vintages, :only => [:new, :edit]
+  before_filter :vintages
   
   # GET /wines
   # GET /wines.json
@@ -86,10 +86,10 @@ class WinesController < ApplicationController
   private
   
   def vintages
-    # render :text => Wine::BACK_VINTAGES
-    @vintages = Array.[]("N.V.")
-    (1..Wine::BACK_VINTAGES).each do |i|
-      @vintages.push((Time.now - i*365*24*60*60).strftime("%Y"))
+    @vintages = { "N.V." => 0 }
+    Wine::BACK_VINTAGES.times do |i|
+      y = (Time.now - i.years).year
+      @vintages[y.to_s] = y
     end
   end  
 end
