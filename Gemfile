@@ -11,6 +11,7 @@ gem 'haml'
 gem 'haml-rails'
 gem 'nested_form', :git => 'https://github.com/ryanb/nested_form.git'
 gem 'minitest'
+gem 'awesome_print'
 
 # Gems used only for assets and not required
 # in production environments by default.

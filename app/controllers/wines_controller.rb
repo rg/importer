@@ -16,7 +16,8 @@ class WinesController < ApplicationController
   # GET /wines/1.json
   def show
     @wine = Wine.find(params[:id])
-
+    @bottlings = Bottling.find_all_by_wine_id(params[:id]).sort_by! {|b| b.bottle_size[0..-3].to_i }
+    
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @wine }

@@ -2,24 +2,29 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-span {
-  margin-right: 25px;
-  vertical-align: top;
-}
-div.notes {
-  display: inline-block;
-  vertical-align: top;
-
-  label {
+.inventory_withdrawals {
+  span {
+    margin-right: 25px;
     vertical-align: top;
   }
-}
-ul {
-  padding: 0;
-}
-.fields {
-  width: 100%;
-  select {
-    margin-right: 25px;
+  div.notes {
+    display: inline-block;
+    vertical-align: top;
+
+    label {
+      vertical-align: top;
+    }
+  }
+  ul {
+    padding: 0;
+  }
+  .fields {
+    width: 100%;
+    select {
+      margin-right: 25px;
+    }
+    input {
+      width: 40px;
+    }
   }
 }

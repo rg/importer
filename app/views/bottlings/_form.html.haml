@@ -13,7 +13,7 @@
     = collection_select(:bottling, :wine_id, Wine.all, :id, :full_name)
   .field
     = f.label :bottle_size
-    = select("bottlings", "bottle_size", Bottling::SIZES)
+    = select("bottling", "bottle_size", Bottling::SIZES)
   .field
     = f.label :warehouse_location
     = f.text_field :warehouse_location

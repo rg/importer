@@ -2,13 +2,17 @@
 
 %p
   %b Wine:
-  = @bottling.wine
+  = @bottling.wine.name
 %p
   %b Bottle size:
   = @bottling.bottle_size
 %p
   %b Warehouse location:
   = @bottling.warehouse_location
+%p
+  %b Inventory:
+  %br
+  = inventory_table(@bottling)
 
 = link_to 'Edit', edit_bottling_path(@bottling)
 \|
