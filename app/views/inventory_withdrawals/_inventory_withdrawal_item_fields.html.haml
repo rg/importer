@@ -1,5 +1,9 @@
-= f.label :bottling
-= f.collection_select(:bottling_id, Bottling.all, :id, :full_name)
-= f.label :quantity
-= f.text_field :quantity
-= f.link_to_remove "Remove"
+.row
+  .span5= f.input :bottling_id, 
+                  :label => false, 
+                  :collection => Bottling.all, 
+                  :label_method => :full_name,
+                  :prompt => "Select SKU...",
+                  :input_html => { :class => "span5" }
+  .span2= f.input :quantity, :label => false, :placeholder => "Quantity", :input_html => { :class => "input-small" }
+  = f.link_to_remove "Remove", :class => "btn"

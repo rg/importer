@@ -1,22 +1,11 @@
 %p#notice= notice
 
-%p
-  %b Name:
-  = @wine.name
-%p
-  %b Vintage:
-  = @wine.display_vintage
-%p
-  %b Producer:
-  = @wine.producer.name
-%p
-  %b Appellation:
-  = @wine.appellation
-%p
-  %b Notes:
-  = @wine.notes
+%h1 #{@wine.display_vintage} #{@wine.name}
+%h2 #{@wine.producer.name}, #{@wine.appellation}
+%h3 Notes
+%p.notes= @wine.notes
 
-%b Inventory:
+%h3 Inventory
 .inventory
   - @bottlings.each do |bottling|
     .bottling

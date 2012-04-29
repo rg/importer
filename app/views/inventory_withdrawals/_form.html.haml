@@ -1,27 +1,19 @@
-= nested_form_for @inventory_withdrawal do |f|
+= link_to "&larr; Back".html_safe, inventory_withdrawals_path
+= simple_nested_form_for(@inventory_withdrawal, :html => {:class => 'form-vertical' }) do |f|
   -if @inventory_withdrawal.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@inventory_withdrawal.errors.count, "error")} prohibited this inventory_withdrawal from being saved:"
+    .alert.alert-error
+      %h4= "#{pluralize(@inventory_withdrawal.errors.count, "error")} prohibited this inventory_withdrawal from being saved:"
       %ul
         - @inventory_withdrawal.errors.full_messages.each do |msg|
           %li= msg
 
-  %span
-    = f.label :date
-    = f.date_select :date
-  %span
-    = f.label :category
-    = select("inventory_withdrawal", "category", InventoryWithdrawal::TYPES)
-  .notes
-    = f.label :notes
-    = f.text_area :notes, :rows => 2  
+  = f.input :date, :as => :date, :input_html => { :class => "input-small" }
+  = f.input :category, :collection => InventoryWithdrawal::TYPES, :prompt => "select...", :input_html => { :class => "input-small" }
+  = f.input :notes, :as => :text, :input_html => { :rows => 2 }
+
   .actions
-    = f.link_to_add "Add Item", :inventory_withdrawal_items
-    = f.submit 'Save'
-    &nbsp;&nbsp;
-    = link_to 'Back', inventory_withdrawals_path
+    = f.link_to_add "Add Item", :inventory_withdrawal_items, :class => "btn btn-primary"
+    = f.button :submit, 'Save', :class => "btn-success"
 
-  %p.before_items     
-  = f.fields_for :inventory_withdrawal_items
-        
-
+  .above_new_items     
+  = f.simple_fields_for :inventory_withdrawal_items
