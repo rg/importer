@@ -7,7 +7,7 @@
 
 %h3 Inventory
 .inventory
-  = render :partial => "bottlings/inventory_table"
+  = render :partial => "bottlings/inventory_table", :locals => { :bottlings => @bottlings }
 
 = link_to 'Edit', edit_wine_path(@wine)
 \|

@@ -9,10 +9,10 @@
 %p
   %b Warehouse location:
   = @bottling.warehouse_location
-%p
-  %b Inventory:
-  %br
-  = inventory_table(@bottling)
+
+%h3 Inventory
+.inventory
+  = render :partial => "bottlings/inventory_table", :locals => { :bottlings => [@bottling] }
 
 = link_to 'Edit', edit_bottling_path(@bottling)
 \|
