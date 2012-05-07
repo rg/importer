@@ -4,6 +4,20 @@ body {
 form {
 	margin-top: 15px;
 }
+h3 {
+  margin: 15px 0 5px 0;
+}
 .alert.alert-error ul {
 	margin-top: 10px;
+}
+.inventory {
+  table {
+    width: 300px;
+    .sku {
+      font-style: italic;
+      th {
+        padding-top: 14px;
+      }
+    }
+  }
 }

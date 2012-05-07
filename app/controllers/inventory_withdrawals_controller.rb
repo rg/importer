@@ -1,8 +1,10 @@
 class InventoryWithdrawalsController < ApplicationController
+  include ApplicationHelper
+  
   # GET /inventory_withdrawals
   # GET /inventory_withdrawals.json
   def index
-    @inventory_withdrawals = InventoryWithdrawal.all
+    handle_sorting(:inventory_withdrawal, :date, :category)
 
     respond_to do |format|
       format.html # index.html.erb

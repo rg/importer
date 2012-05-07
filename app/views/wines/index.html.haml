@@ -4,10 +4,10 @@
 %br
 %br
 
-%table
+%table.table.table-condensed.table-striped
   %tr
-    %th Vintage
-    %th Name
+    %th= sort_link("Vintage", :vintage)
+    %th= sort_link("Name", :name)
     %th Producer
     %th Appellation
     %th

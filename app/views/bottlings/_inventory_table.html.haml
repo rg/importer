@@ -1,0 +1,12 @@
+%table.table.table-striped.table-condensed
+  %tr
+    %th On Hand
+    %th Reserved
+    %th Available
+  - @bottlings.each do |b|
+    %tr{ :class => "sku" }
+      %th{ :colspan => 3 }= "#{b.bottle_size} - #{b.sku}"
+    %tr
+      %td= b.quantity_on_hand
+      %td= b.quantity_reserved
+      %td= b.quantity_available

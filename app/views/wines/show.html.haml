@@ -7,11 +7,7 @@
 
 %h3 Inventory
 .inventory
-  - @bottlings.each do |bottling|
-    .bottling
-      %span= "#{bottling.bottle_size} - #{bottling.sku}"
-      %br
-      = inventory_table(bottling)
+  = render :partial => "bottlings/inventory_table"
 
 = link_to 'Edit', edit_wine_path(@wine)
 \|

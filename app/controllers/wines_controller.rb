@@ -1,10 +1,11 @@
 class WinesController < ApplicationController
+  include ApplicationHelper
   before_filter :vintages
   
   # GET /wines
   # GET /wines.json
   def index
-    @wines = Wine.all
+    handle_sorting(:wine, :vintage, :name)
 
     respond_to do |format|
       format.html # index.html.erb

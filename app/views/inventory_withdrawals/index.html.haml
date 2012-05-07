@@ -1,9 +1,11 @@
 %h1 Inventory Withdrawals
-
-%table
+= link_to 'New Withdrawal', new_inventory_withdrawal_path
+%br
+%br
+%table.table.table-condensed.table-striped
   %tr
-    %th Date
-    %th Category
+    %th= sort_link("Date", :date)
+    %th= sort_link("Category", :category)
     %th Notes
     %th
     %th
@@ -17,7 +19,3 @@
       %td= link_to 'Show', inventory_withdrawal
       %td= link_to 'Edit', edit_inventory_withdrawal_path(inventory_withdrawal)
       %td= link_to 'Delete', inventory_withdrawal, :confirm => 'Are you sure?', :method => :delete
-
-%br
-
-= link_to 'New Inventory withdrawal', new_inventory_withdrawal_path

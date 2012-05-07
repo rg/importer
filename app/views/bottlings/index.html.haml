@@ -4,11 +4,11 @@
 %br
 %br
 
-%table
+%table.table.table-condensed.table-striped
   %tr
-    %th SKU
+    %th= sort_link("SKU", :sku)
     %th Wine
-    %th Bottle size
+    %th= sort_link("Bottle size", :bottle_size)
     %th Warehouse location
     %th
     %th
