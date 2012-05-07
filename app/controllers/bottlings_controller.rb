@@ -4,7 +4,7 @@ class BottlingsController < ApplicationController
   # GET /bottlings
   # GET /bottlings.json
   def index
-    handle_sorting(:bottling, :sku, :wine, :bottle_size)
+    @bottlings = handle_sorting(:bottling, :sku, :wine, :bottle_size)
 
     respond_to do |format|
       format.html # index.html.erb

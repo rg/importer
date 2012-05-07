@@ -15,12 +15,10 @@ module ApplicationHelper
     end
     conditions = params[:query] ? ["LOWER(name) LIKE ?", "%#{params[:query].downcase}%"] : ""
 
-    collection = if (sort.present? || conditions.present?)
+    if (sort.present? || conditions.present?)
       Object.const_get(klass.to_s.camelize).where(conditions).order(sort)
     else 
       Object.const_get(klass.to_s.camelize).all
     end
-
-    instance_variable_set("@#{klass.to_s}s", collection)
   end
 end
