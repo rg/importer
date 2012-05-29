@@ -23,3 +23,4 @@
       %td= link_to 'Show', bottling
       %td= link_to 'Edit', edit_bottling_path(bottling)
       %td= link_to 'Delete', bottling, :confirm => 'Are you sure?', :method => :delete
+= will_paginate @bottlings

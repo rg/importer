@@ -19,3 +19,4 @@
       %td= link_to 'Show', inventory_withdrawal
       %td= link_to 'Edit', edit_inventory_withdrawal_path(inventory_withdrawal)
       %td= link_to 'Delete', inventory_withdrawal, :confirm => 'Are you sure?', :method => :delete
+= will_paginate @inventory_withdrawals      

@@ -23,4 +23,4 @@
       %td= link_to 'Show', producer
       %td= link_to 'Edit', edit_producer_path(producer)
       %td= link_to 'Delete', producer, :confirm => 'Are you sure?', :method => :delete
-
+= will_paginate @producers

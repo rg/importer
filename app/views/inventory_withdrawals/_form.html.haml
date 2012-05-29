@@ -1,4 +1,3 @@
-= link_to "&larr; Back".html_safe, inventory_withdrawals_path
 = simple_nested_form_for(@inventory_withdrawal, :html => {:class => 'form-vertical' }) do |f|
   -if @inventory_withdrawal.errors.any?
     .alert.alert-error

@@ -1,8 +1,10 @@
 class ProducersController < ApplicationController
+  include ApplicationHelper
+  
   # GET /producers
   # GET /producers.json
   def index
-    @producers = Producer.all
+    @producers = handle_sorting(:producer, :name)
 
     respond_to do |format|
       format.html # index.html.erb
