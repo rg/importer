@@ -4,23 +4,25 @@
 %br
 %br
 
-%table.table.table-condensed.table-striped
-  %tr
-    %th= sort_link("SKU", :sku)
-    %th Wine
-    %th= sort_link("Bottle size", :bottle_size)
-    %th Warehouse location
-    %th
-    %th
-    %th
-
-  - @bottlings.each do |bottling|
+.row
+  %table.table.table-condensed.table-striped.span9
     %tr
-      %td= bottling.sku
-      %td= bottling.wine.name
-      %td= bottling.bottle_size
-      %td= bottling.warehouse_location
-      %td= link_to 'Show', bottling
-      %td= link_to 'Edit', edit_bottling_path(bottling)
-      %td= link_to 'Delete', bottling, :confirm => 'Are you sure?', :method => :delete
-= will_paginate @bottlings
+      %th= sort_link("SKU", :sku)
+      %th Wine
+      %th= sort_link("Bottle size", :bottle_size)
+      %th Warehouse location
+      %th.span2
+
+    - @bottlings.each do |bottling|
+      %tr
+        %td= bottling.sku
+        %td= bottling.wine.name
+        %td= bottling.bottle_size
+        %td= bottling.warehouse_location
+        %td
+          = link_to 'View', bottling
+          \/
+          = link_to 'Edit', edit_bottling_path(bottling)
+          \/
+          = link_to 'Delete', bottling, :confirm => 'Are you sure?', :method => :delete
+  = will_paginate @bottlings

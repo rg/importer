@@ -2,21 +2,21 @@
 = link_to 'New Withdrawal', new_inventory_withdrawal_path
 %br
 %br
-%table.table.table-condensed.table-striped
-  %tr
-    %th= sort_link("Date", :date)
-    %th= sort_link("Category", :category)
-    %th Notes
-    %th
-    %th
-    %th
-
-  - @inventory_withdrawals.each do |inventory_withdrawal|
+.row
+  %table.table.table-condensed.table-striped.span4
     %tr
-      %td= inventory_withdrawal.date
-      %td= inventory_withdrawal.category
-      %td= inventory_withdrawal.notes
-      %td= link_to 'Show', inventory_withdrawal
-      %td= link_to 'Edit', edit_inventory_withdrawal_path(inventory_withdrawal)
-      %td= link_to 'Delete', inventory_withdrawal, :confirm => 'Are you sure?', :method => :delete
+      %th= sort_link("Date", :date)
+      %th= sort_link("Category", :category)
+      %th.span2
+
+    - @inventory_withdrawals.each do |inventory_withdrawal|
+      %tr
+        %td= inventory_withdrawal.date
+        %td= inventory_withdrawal.category
+        %td
+          = link_to 'View', inventory_withdrawal
+          \/
+          = link_to 'Edit', edit_inventory_withdrawal_path(inventory_withdrawal)
+          \/
+          = link_to 'Delete', inventory_withdrawal, :confirm => 'Are you sure?', :method => :delete
 = will_paginate @inventory_withdrawals      

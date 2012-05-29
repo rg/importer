@@ -4,23 +4,25 @@
 %br
 %br
 
-%table.table.table-condensed.table-striped
-  %tr
-    %th= sort_link("Vintage", :vintage)
-    %th= sort_link("Name", :name)
-    %th Producer
-    %th Appellation
-    %th
-    %th
-    %th
-
-  - @wines.each do |wine|
+.row
+  %table.table.table-condensed.table-striped.span9
     %tr
-      %td= wine.display_vintage
-      %td= wine.name
-      %td= wine.producer.name
-      %td= wine.appellation
-      %td= link_to 'Show', wine
-      %td= link_to 'Edit', edit_wine_path(wine)
-      %td= link_to 'Delete', wine, :confirm => 'Are you sure?', :method => :delete
-= will_paginate @wines
+      %th= sort_link("Vintage", :vintage)
+      %th= sort_link("Name", :name)
+      %th Producer
+      %th Appellation
+      %th.span2
+
+    - @wines.each do |wine|
+      %tr
+        %td= wine.display_vintage
+        %td= wine.name
+        %td= wine.producer.name
+        %td= wine.appellation
+        %td
+          = link_to 'View', wine
+          \/
+          = link_to 'Edit', edit_wine_path(wine)
+          \/
+          = link_to 'Delete', wine, :confirm => 'Are you sure?', :method => :delete
+  = will_paginate @wines

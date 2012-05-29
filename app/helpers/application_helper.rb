@@ -13,7 +13,7 @@ module ApplicationHelper
     key += "_rev" if params[:sort] == key
     url_params = { :action => "index", :sort => key }
     url_params.merge!({:query => params[:query]}) if params[:query].present?
-    link_to(text, url_params, :title => "Sort by this field")
+    link_to(text, url_params, :title => "Sort by this column")
   end
 
   def handle_sorting(klass, *columns)
