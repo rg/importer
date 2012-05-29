@@ -1,7 +1,7 @@
 = form_for @bottling do |f|
   -if @bottling.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@bottling.errors.count, "error")} prohibited this bottling from being saved:"
+    .alert.alert-error
+      %h4= "#{pluralize(@bottling.errors.count, "error")} prohibited this bottling from being saved:"
       %ul
         - @bottling.errors.full_messages.each do |msg|
           %li= msg
@@ -18,4 +18,4 @@
     = f.label :warehouse_location
     = f.text_field :warehouse_location
   .actions
-    = f.submit 'Save', :class => "btn-success"
+    = save_button

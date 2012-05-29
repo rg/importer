@@ -6,6 +6,19 @@
   margin-bottom: 25px;
 }
 
+.row.item {
+  margin-left: 0px;
+
+  div, input {
+    margin-right: 4px;
+    display: inline-block;
+  }
+
+  a {
+    vertical-align: top;
+  }
+}
+
 /*.inventory_withdrawals {
   span {
     margin-right: 25px;

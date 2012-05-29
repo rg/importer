@@ -1,7 +1,7 @@
 = form_for @wine do |f|
   -if @wine.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@wine.errors.count, "error")} prohibited this wine from being saved:"
+    .alert.alert-error
+      %h4= "#{pluralize(@wine.errors.count, "error")} prohibited this wine from being saved:"
       %ul
         - @wine.errors.full_messages.each do |msg|
           %li= msg
@@ -22,4 +22,4 @@
     = f.label :notes
     = f.text_area :notes, :rows => 4
   .actions
-    = f.submit 'Save', :class => "btn-success"
+    = save_button

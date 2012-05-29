@@ -1,7 +1,7 @@
 = form_for @producer do |f|
   -if @producer.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@producer.errors.count, "error")} prohibited this producer from being saved:"
+    .alert.alert-error
+      %h4= "#{pluralize(@producer.errors.count, "error")} prohibited this producer from being saved:"
       %ul
         - @producer.errors.full_messages.each do |msg|
           %li= msg
@@ -22,4 +22,4 @@
     = f.label :notes
     = f.text_area :notes, :rows => 4
   .actions
-    = f.submit 'Save', :class => "btn-success"
+    = save_button

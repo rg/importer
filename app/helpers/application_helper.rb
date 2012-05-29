@@ -1,5 +1,9 @@
 module ApplicationHelper
 
+  def save_button
+    button_tag '<i class="icon-ok icon-white"></i> Save'.html_safe, :class => "btn btn-success", :type => :submit
+  end
+
   def back_link(path)
     link_to "&larr; Back".html_safe, path
   end

@@ -11,8 +11,8 @@
   = f.input :notes, :as => :text, :input_html => { :rows => 2 }
 
   .actions
-    = f.link_to_add "Add Item", :inventory_withdrawal_items, :class => "btn btn-primary"
-    = f.button :submit, 'Save', :class => "btn-success"
+    = f.link_to_add '<i class="icon-plus icon-white"></i> Add Item'.html_safe, :inventory_withdrawal_items, :class => "btn btn-primary"
+    = save_button
 
-  .above_new_items     
+  .above_new_items
   = f.simple_fields_for :inventory_withdrawal_items
