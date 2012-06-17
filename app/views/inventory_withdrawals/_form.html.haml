@@ -1,3 +1,4 @@
+= javascript_include_tag "nested_form"
 = simple_nested_form_for(@inventory_withdrawal, :html => {:class => 'form-vertical' }) do |f|
   -if @inventory_withdrawal.errors.any?
     .alert.alert-error
