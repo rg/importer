@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.2.5'
+gem 'rails', '3.2.11'
 
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
@@ -14,6 +14,7 @@ gem 'minitest'
 gem 'awesome_print'
 gem 'simple_form'
 gem 'bootstrap-will_paginate'
+gem 'rails3-jquery-autocomplete'
 
 # Gems used only for assets and not required
 # in production environments by default.
