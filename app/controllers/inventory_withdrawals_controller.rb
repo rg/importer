@@ -1,6 +1,8 @@
 class InventoryWithdrawalsController < ApplicationController
   include ApplicationHelper
 
+  autocomplete :bottling, :display_name, :full => true
+
   # GET /inventory_withdrawals
   # GET /inventory_withdrawals.json
   def index

@@ -1,6 +1,6 @@
 class InventoryWithdrawal < ActiveRecord::Base
   has_many :inventory_withdrawal_items, :dependent => :destroy
-  accepts_nested_attributes_for :inventory_withdrawal_items
+  accepts_nested_attributes_for :inventory_withdrawal_items, :allow_destroy => true
   # validates_associated :inventory_withdrawal_items
   
   validates :date, :category, :presence => { :message => " must be specified."}

@@ -1,9 +1,9 @@
 class InventoryWithdrawalItem < ActiveRecord::Base
   belongs_to :inventory_withdrawal
-  
-  validates :bottling_id, :quantity, :presence =>  { :message => " must be specified."}
+  belongs_to :bottling
 
-  def bottling
-    Bottling.find(bottling_id)
-  end
+  attr_accessor :dummy_field
+  
+  validates :bottling, :presence => true
+  validates :quantity, :presence =>  { :message => " must be specified." }
 end

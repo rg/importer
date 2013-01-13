@@ -6,6 +6,14 @@ class Wine < ActiveRecord::Base
   
   validates :name, :vintage, :producer, :presence => true
 
+  after_update :update_bottling_display_names, :if => lambda { name_changed? || vintage_changed? }
+
+  def update_bottling_display_names
+    bottlings.each do |bottling|
+      bottling.set_display_name
+    end
+  end
+
   def display_vintage
     vintage === 0 ? 'N.V.' : vintage.to_s
   end

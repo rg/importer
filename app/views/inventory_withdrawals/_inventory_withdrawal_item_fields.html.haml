@@ -1,9 +1,11 @@
+- unique_id = rand.to_s[2..-1]
 .row.item
-  = f.input :bottling_id, 
-                  :label => false, 
-                  :collection => Bottling.all, 
-                  :label_method => :full_name,
-                  :prompt => "Select SKU...",
-                  :input_html => { :class => "span5" }
+  = f.input :dummy_field,
+            :label => false, 
+            :url => autocomplete_bottling_display_name_inventory_withdrawals_path, 
+            :as => :autocomplete,
+            :input_html => { :class => "span5" },
+            :id_element => "input##{unique_id}"
+  = f.input :bottling_id, :as => :hidden, :input_html => { :id => unique_id }
   = f.input :quantity, :label => false, :placeholder => "Quantity", :input_html => { :class => "input-small" }
   = f.link_to_remove '<i class="icon-minus icon-white"></i>'.html_safe, :class => "btn btn-danger"

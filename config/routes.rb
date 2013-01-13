@@ -1,5 +1,7 @@
 Importer::Application.routes.draw do
-  resources :inventory_withdrawals
+  resources :inventory_withdrawals do
+    get :autocomplete_bottling_display_name, :on => :collection
+  end
 
   resources :bottlings
 
