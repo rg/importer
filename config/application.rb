@@ -46,7 +46,7 @@ module Importer
     config.assets.version = '1.0'
 
     # Other stuff to precompile
-    config.assets.precompile += ['nested_form.js']    
+    config.assets.precompile += []    
 
     # For Heroku
     config.assets.initialize_on_precompile = false
