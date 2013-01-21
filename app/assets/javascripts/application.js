@@ -8,6 +8,5 @@
 //= require jquery_ujs
 //= require jquery-ui
 //= require bootstrap
+//= require bootstrap-typeahead
 //= require jquery_nested_form
-//= require autocomplete-rails
-//= require nested_form_override

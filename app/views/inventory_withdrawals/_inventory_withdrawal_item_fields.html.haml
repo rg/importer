@@ -1,10 +1,10 @@
-- unique_id = rand.to_s[2..-1]
+- unique_id = Digest::SHA1.hexdigest([Time.now, rand].join)
 .row.item
-  = f.input :dummy_field,
+  = f.input :dummy,
             :label => false, 
             :url => autocomplete_bottling_display_name_inventory_withdrawals_path, 
             :as => :autocomplete,
-            :input_html => { :class => "span5" },
+            :input_html => { :class => "span5" , :value => f.object.try(:bottling).try(:display_name) },
             :id_element => "input##{unique_id}"
   = f.input :bottling_id, :as => :hidden, :input_html => { :id => unique_id }
   = f.input :quantity, :label => false, :placeholder => "Quantity", :input_html => { :class => "input-small" }
