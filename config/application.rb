@@ -46,7 +46,7 @@ module Importer
     config.assets.version = '1.0'
 
     # Other stuff to precompile
-    config.assets.precompile += ["bootstrap.css", "bootstrap-responsive.css"]    
+    config.assets.precompile += ["bootstrap.css", "bootstrap-responsive.css", "inventory_withdrawals.js.coffee"]    
 
     # For Heroku
     config.assets.initialize_on_precompile = false
