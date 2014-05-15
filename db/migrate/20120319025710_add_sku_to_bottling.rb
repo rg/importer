@@ -1,5 +1,5 @@
 class AddSkuToBottling < ActiveRecord::Migration
   def change
-    add_column :bottlings, :display_name, :string
+    add_column :bottlings, :sku, :string
   end
 end

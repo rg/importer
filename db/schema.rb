@@ -17,8 +17,8 @@ ActiveRecord::Schema.define(:version => 20130113220808) do
     t.integer  "wine_id"
     t.string   "bottle_size"
     t.string   "warehouse_location"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
     t.string   "sku"
     t.string   "display_name"
   end
@@ -29,8 +29,8 @@ ActiveRecord::Schema.define(:version => 20130113220808) do
     t.integer  "inventory_withdrawal_id"
     t.integer  "bottling_id"
     t.integer  "quantity"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",              :null => false
+    t.datetime "updated_at",              :null => false
   end
 
   add_index "inventory_withdrawal_items", ["bottling_id"], :name => "index_inventory_withdrawal_items_on_bottling_id"
@@ -40,8 +40,8 @@ ActiveRecord::Schema.define(:version => 20130113220808) do
     t.date     "date"
     t.string   "category"
     t.text     "notes"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "producers", :force => true do |t|
@@ -50,8 +50,8 @@ ActiveRecord::Schema.define(:version => 20130113220808) do
     t.string   "phone"
     t.string   "address"
     t.text     "notes"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "wines", :force => true do |t|
@@ -60,8 +60,8 @@ ActiveRecord::Schema.define(:version => 20130113220808) do
     t.integer  "producer_id"
     t.string   "appellation"
     t.text     "notes"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   add_index "wines", ["producer_id"], :name => "index_wines_on_producer_id"
